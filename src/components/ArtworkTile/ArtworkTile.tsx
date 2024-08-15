@@ -17,7 +17,7 @@ export const ArtworkTile = forwardRef(
     };
 
     return (
-      <div ref={ref}>
+      <div ref={ref as React.LegacyRef<HTMLDivElement>}>
         <Card onClick={handleNavigate}>
           <ArtworkTileCardContent>
             <ArtworkImage src={imagePath} alt={title} />
