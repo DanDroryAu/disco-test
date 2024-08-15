@@ -6,7 +6,6 @@
 - `test` - launch test runner
 - `plop` - launch plop generator to create new components, pages, etc.
 
-
 ## Notes:
 - I used `react-router-dom` for routing using `createBrowserRouter`. I've added a default layout. The current system doesn't support layout switching
 - I've used `styled-components` for styling. Styled components are added in the boilerplate when running `yarn plop` to ensure consitency.
