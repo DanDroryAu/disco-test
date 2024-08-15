@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledAppBar = styled.div`
   display: flex;
+  position: fixed;
   height: 64px;
   width: 100%;
   background-color: #fff;

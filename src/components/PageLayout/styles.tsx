@@ -12,4 +12,5 @@ export const Content = styled.div`
   flex-direction: column;
   width: 100%;
   padding: 20px;
+  margin-top: calc(64px + 32px);
 `;

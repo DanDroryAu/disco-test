@@ -7,6 +7,7 @@ import type {
 } from '@/api/articApi/types/requests';
 
 const defaultFields = ['id', 'title', 'artist_title', 'image_id'];
+const defaultPagination = { limit: 20, page: 1 };
 
 const API_PREFIX = '/api/v1';
 
@@ -16,11 +17,13 @@ export const articApiSlice = createApi({
   tagTypes: ['Artworks', 'Artwork'],
   endpoints: (build) => ({
     getArtworks: build.query<ArtworksApiResponse, ArtworksApiRequest>({
-      query: ({ pagination, fields = defaultFields }) => {
+      query: ({ pagination = defaultPagination, fields = defaultFields }) => {
         return {
           url: `${API_PREFIX}/artworks/`,
           params: {
             fields,
+            limit: pagination?.limit,
+            page: pagination?.page,
           },
         };
       },
