@@ -17,15 +17,13 @@ export const ArtworkTile = forwardRef(
     };
 
     return (
-      <div ref={ref}>
-        <Card onClick={handleNavigate}>
-          <ArtworkTileCardContent>
-            <ArtworkImage src={imagePath} alt={title} />
-            <Title>{title}</Title>
-            <Artist>{artist_title}</Artist>
-          </ArtworkTileCardContent>
-        </Card>
-      </div>
+      <Card onClick={handleNavigate} ref={ref}>
+        <ArtworkTileCardContent>
+          <ArtworkImage src={imagePath} alt={title} />
+          <Title>{title}</Title>
+          <Artist>By: {artist_title}</Artist>
+        </ArtworkTileCardContent>
+      </Card>
     );
   }
 );
