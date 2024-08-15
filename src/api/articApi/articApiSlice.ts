@@ -28,7 +28,7 @@ export const articApiSlice = createApi({
         };
       },
       providesTags: (result, error, { pagination }) => [
-        { type: 'Artworks', id: pagination?.page || 0 },
+        { type: 'Artworks', id: JSON.stringify(pagination) },
       ],
     }),
     getArtwork: build.query<ArtworkApiResponse, ArtworkApiRequest>({
