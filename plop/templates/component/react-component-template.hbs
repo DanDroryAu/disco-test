@@ -1,0 +1,16 @@
+import { Styled{{name}} } from './styles';
+
+export type Props = {
+  foo?: string;
+};
+
+export const {{name}} = ({ foo }: Props) => {
+  return (
+    <Styled{{name}}>
+      {foo}
+    </Styled{{name}}>
+  );
+};
+
+{{! This is a simple React component template. It's a functional component with a single prop, foo. }}
+{{! The component is a div that renders the value of foo. }}
