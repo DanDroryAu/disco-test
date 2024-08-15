@@ -5,12 +5,19 @@ import ArtworkTile, {
 
 export type Props = {
   artworks: ArtworkTileProps[];
+  observerCallback?: (node: Element) => void;
 };
 
-export const ArtworkGrid = ({ artworks }: Props) => (
-  <StyledArtworkGrid>
-    {artworks.map((artwork) => (
-      <ArtworkTile key={artwork.id} {...artwork} />
-    ))}
-  </StyledArtworkGrid>
-);
+export const ArtworkGrid = ({ artworks, observerCallback }: Props) => {
+  return (
+    <StyledArtworkGrid>
+      {artworks.map((artwork, index) => (
+        <ArtworkTile
+          key={artwork.id}
+          {...artwork}
+          ref={artworks.length === index + 1 ? observerCallback : null}
+        />
+      ))}
+    </StyledArtworkGrid>
+  );
+};
